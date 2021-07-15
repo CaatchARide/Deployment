@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const user = require('./FullStack/server/models/userSchema');
+const user = require('./models/userSchema');
 const dotenv = require('dotenv');
 const session = require('express-session');
 const MongoDbSession = require('connect-mongodb-session')(session);
@@ -81,7 +81,7 @@ app.use(require('./routes/driver', detailsRoutes));
 
 
 // Bring in the passport authentication strategy 
-require('./FullStack/server/middleware/passport-config')(passport);
+require('./middleware/passport-config')(passport);
 
 // Running the local server on the port
 const PORT = process.env.PORT || 5000;
